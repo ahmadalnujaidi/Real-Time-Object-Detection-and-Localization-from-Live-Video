@@ -63,32 +63,31 @@ cap.release()  # Release the video capture object
 # print("Predicted Boxes:", pred_boxes)
 # print("Predicted Labels:", pred_labels)
 
-
+print("Predictions Completed!")
+print("now finding ground truth...")
 #---------------------------------------------------------------------------------------------  
-
 
 # GROUND TRUTH !!!
 
-# DOWNLOAD DATASET VALIDATION ANNOTATIONS TO EXTRACT GROUND TRUTH VALUES
+# DOWNLOAD VALIDATION DATASET ZIP FROM GOOGLE DRIVE
 import gdown
 import zipfile
-
-# Replace with your own file ID
-# file_id = "11HjMyxorACNhWd0IVSD4L9YLsgKDcLD4"
-# output = "coco8zipped.zip"
-gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
-
-# https://drive.google.com/file/d/11HjMyxorACNhWd0IVSD4L9YLsgKDcLD4/view?usp=drive_link
-
-
-with zipfile.ZipFile(output, 'r') as zip_ref:
-    zip_ref.extractall("coco8")
-
-
 import os
 
-# Replace with the path to your validation labels folder
-labels_path = "/kaggle/working/coco8/coco8/labels/val"
+# Replace with your own Google Drive file ID and output name
+file_id = "1UGnBqZQT0amOFeKVTMNM9briM43Vwxhd"  # Change this to your file's ID
+output = "val_data.zip"  # Name of the downloaded file
+# https://drive.google.com/file/d/1UGnBqZQT0amOFeKVTMNM9briM43Vwxhd/view?usp=drive_link
+
+# Download the zip file from Google Drive
+gdown.download(f"https://drive.google.com/uc?id={file_id}", output, quiet=False)
+
+# Extract the zip file to a specific directory
+with zipfile.ZipFile(output, 'r') as zip_ref:
+    zip_ref.extractall("data")  # Extract into 'coco8' folder
+
+# Adjust path to the validation labels folder
+labels_path = "data/val"  # Path within the extracted zip
 
 gt_boxes = []  # List to store ground truth boxes
 gt_labels = []  # List to store ground truth labels
@@ -100,7 +99,7 @@ print(f"Total Label Files: {total_files}")
 # Track processed files
 processed_files = 0
 
-# Iterate through the label files
+# Iterate through the label files and extract information
 for label_file in os.listdir(labels_path):
     with open(os.path.join(labels_path, label_file), 'r') as f:
         for line in f.readlines():
@@ -121,7 +120,7 @@ for label_file in os.listdir(labels_path):
     if processed_files % 10 == 0 or processed_files == total_files:
         print(f"Processed {processed_files}/{total_files} files ({(processed_files / total_files) * 100:.2f}%)")
 
-# Print ground truth data to verify OPTIONAL! uncomment to see
+# OPTIONAL: Uncomment to print the ground truth data for verification
 # print("Ground Truth Boxes:", gt_boxes)
 # print("Ground Truth Labels:", gt_labels)
 
@@ -189,3 +188,4 @@ accuracy = compute_e(pred_boxes, gt_boxes, pred_labels, gt_labels)
 print(f"Accuracy (e): {accuracy:.4f}")
 
 
+# Accuracy (e): 1.0000

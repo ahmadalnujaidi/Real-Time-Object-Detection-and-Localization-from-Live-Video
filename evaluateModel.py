@@ -6,7 +6,7 @@
 # COMBINED SCORE!!!!!!
 
 # measured values
-S = 40.71  # Speed in ms (lower is better) CHANGE WITH SPEED MEASUREMENT
+S = 75.33  # Speed in ms (lower is better) CHANGE WITH SPEED MEASUREMENT
 A = 1.0000  # Accuracy (e) (higher is better) CHANGE WITH ACCURACY MEASUREMENT
 M = 14.07  # Memory usage in MB (lower is better) CHANGE WITH MEMORY MEASUREMENT
 
@@ -22,13 +22,13 @@ print(f"Combined Score (CS): {CS:.4f}")
 #------------------------------------------------------------------------------------------------------------
 import pandas as pd
 
-# Example: Save your metrics in submission.csv
-submission = pd.DataFrame({
-    'Speed(ms)': [40.71], # enter speed
+# Example: Save your metrics in results.csv OPTIONAL
+results = pd.DataFrame({
+    'Speed(ms)': [75.33], # enter speed
     'Accuracy(e)': [1.0000], # enter accuracy
     'Memory(MB)': [14.07], # enter memory
-    'Combined Score': [19.4980] # final combined score
+    'Combined Score': [33.3460] # final combined score
 })
 
-submission.to_csv('submission.csv', index=False)
-print("Submission file generated: submission.csv")
+results.to_csv('results.csv', index=False)
+print("results file generated: results.csv")

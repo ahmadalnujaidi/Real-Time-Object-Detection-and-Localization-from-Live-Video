@@ -1,4 +1,4 @@
-# MEMORY = 14.07 MB
+# MEMORY = 14.96 MB
 
 import tracemalloc  # For tracking memory usage
 import onnxruntime as ort

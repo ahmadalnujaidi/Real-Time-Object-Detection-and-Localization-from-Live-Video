@@ -1,4 +1,4 @@
-# SPEED MEASUREMENT # Average Speed: 40.71 ms
+# SPEED MEASUREMENT # Average Speed: 75.33 ms
 import os
 os.system('pip install opencv-python tqdm ultralytics')
 
