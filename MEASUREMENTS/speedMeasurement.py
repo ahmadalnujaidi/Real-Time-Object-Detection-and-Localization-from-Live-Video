@@ -8,7 +8,7 @@ from tqdm import tqdm  # Import tqdm for progress bar
 from ultralytics import YOLO
 
 # Load your YOLO model
-model = YOLO("yolo11m.pt")
+model = YOLO("model.pt")
 
 # Open the input video with OpenCV
 cap = cv2.VideoCapture('testing_video.mp4')

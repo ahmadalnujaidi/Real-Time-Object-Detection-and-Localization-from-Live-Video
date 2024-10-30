@@ -10,7 +10,7 @@ import gdown
 # SHARING LINK: https://drive.google.com/file/d/1STUzuUC8SF6oSBA4h_iQzfro0kQKkknc/view?usp=sharing
 
 url = "https://drive.google.com/uc?id=1STUzuUC8SF6oSBA4h_iQzfro0kQKkknc"
-output = "model.onnx"
+output = "model.pt"
 gdown.download(url, output, quiet=False)
 
 print("Model downloaded successfully.")
