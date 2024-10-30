@@ -28,7 +28,7 @@ print("Model downloaded successfully.")
 # the longer the video the longer it takes to execute
 # Replace 'your_file_id' with the file ID from the Google Drive link
 # url= 'https://drive.google.com/uc?id="your_file_id"' e.g testvid1 id=1BJDHWae88l4GFlT4DnZZvKJ8NBJ_Zoht
-url = 'https://drive.google.com/uc?id=1Q9DfAffOCGsE-w3VAU7OfcyNhmb8UtP3'
+url = 'https://drive.google.com/uc?id=1zVwNyH8MKc9Cq7FroySxGcRelMelqflu'
 output = 'testing_video.mp4'  # Local filename
 
 # Download the video
