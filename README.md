@@ -1,6 +1,6 @@
 # Real-Time Object Detection & Localization from Live Video
 
-[![Watch the video](assets\yolo11m.png)](https://youtu.be/fvSChit6Bng)
+[![Watch the video]](https://youtu.be/fvSChit6Bng)
 
 ## Project Overview
 
